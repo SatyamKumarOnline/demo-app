@@ -1,0 +1,18 @@
+<div>
+    {{mainAppMessage}}
+</div>
+
+<ng-container *ngIf="queryParamValue">
+    <div>
+   Id passed from Main application using <b>Query Param</b> is:: {{queryParamValue}}
+   </div>
+</ng-container>
+
+<button>
+    <a routerLink="info">Info</a>
+</button>
+<button> 
+    <a routerLink="detail">Detail</a>
+</button>
+<router-outlet>
+</router-outlet>
