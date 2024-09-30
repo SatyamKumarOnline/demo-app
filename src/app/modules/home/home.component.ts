@@ -29,6 +29,9 @@ export class HomeComponent {
     this.dynamicRouteService.addRoutes(this.dynamicRoutes);
   }
 
+  /**
+   * ngOnInit life cycle hook
+   */
   ngOnInit(): void {
     this.appDataSrvc.getMessage()?.pipe(takeUntil(this.destroy$)).subscribe((message: string) => {
       this.mainAppMessage = message;
@@ -40,5 +43,13 @@ export class HomeComponent {
       this.homeDataSrvc.setData(this.queryParamValue);
      }
     });
+  }
+
+ /**
+  * ng On destroy lif cycle
+  */
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -1,18 +1,23 @@
-<div>
+<div class="m-1 p-3">
     {{mainAppMessage}}
-</div>
+
 
 <ng-container *ngIf="queryParamValue">
     <div>
    Id passed from Main application using <b>Query Param</b> is:: {{queryParamValue}}
    </div>
 </ng-container>
-
+<div class="d-flez mt-2">
 <button>
     <a routerLink="info">Info</a>
 </button>
-<button> 
+<button class="ml-2"> 
     <a routerLink="detail">Detail</a>
 </button>
+</div>
+<div class="mt-2">
 <router-outlet>
 </router-outlet>
+</div>
+
+</div>
